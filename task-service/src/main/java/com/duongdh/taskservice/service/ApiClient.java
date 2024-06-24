@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(url = "http://localhost:8080", value = "OWNER-SERVICE")
+@FeignClient(name = "OWNER-SERVICE")
 public interface ApiClient {
     // Build get Owner REST API
     @GetMapping("api/owners/{owner-code}")
