@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import ownersReducer from './features/owner/ownerSlice';
+import tasksReducer from './features/task/taskSlice';
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       owner: ownersReducer,
+      task: tasksReducer,
     }
   })
 }

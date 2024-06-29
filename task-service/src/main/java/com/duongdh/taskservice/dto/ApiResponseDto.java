@@ -10,6 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ApiResponseDto {
-    private OwnerDto ownerDto;
-    private TaskDto taskDto;
+    private Long id;
+    private String taskName;
+    private String ownerDto;
 }

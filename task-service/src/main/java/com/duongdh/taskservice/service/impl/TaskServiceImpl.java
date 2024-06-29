@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -39,8 +40,9 @@ public class TaskServiceImpl implements TaskService {
         TaskDto taskDto = modelMapper.map(task, TaskDto.class);
 
         ApiResponseDto apiResponseDto = new ApiResponseDto();
-        apiResponseDto.setTaskDto(taskDto);
-        apiResponseDto.setOwnerDto(ownerDto);
+        apiResponseDto.setId(taskDto.getId());
+        apiResponseDto.setTaskName(taskDto.getTaskName());
+        apiResponseDto.setOwnerDto(ownerDto.getOwnerName());
         return apiResponseDto;
     }
 
